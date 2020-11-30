@@ -1,10 +1,25 @@
 import * as THREE from "three";
 /// @ts-ignore
 import React, { useEffect, useRef } from "react";
+import { ReactThreeFiber } from "react-three-fiber";
 import { Canvas, extend, useFrame, useThree } from "react-three-fiber";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { shaderMaterial } from "./shaderMaterial";
 /// @ts-ignore
 import glsl from "babel-plugin-glsl/macro";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      orbitControls: ReactThreeFiber.Object3DNode<
+        OrbitControls,
+        typeof OrbitControls
+      >;
+    }
+  }
+}
+
+extend({ OrbitControls });
 
 const ColorMaterial = shaderMaterial(
   { time: 0, color: new THREE.Color(0.2, 0.0, 0.1) },
@@ -36,7 +51,7 @@ function Bg() {
   });
   return (
     <mesh scale={[max, max, 1]}>
-      <planeBufferGeometry />
+      <circleGeometry args={[20, 128]} />
       <colorMaterial ref={ref} />
     </mesh>
   );
@@ -59,11 +74,31 @@ function Box() {
   );
 }
 
+const CameraControls = () => {
+  // Get a reference to the Three.js Camera, and the canvas html element.
+  // We need these to setup the OrbitControls component.
+  // https://threejs.org/docs/#examples/en/controls/OrbitControls
+  const {
+    camera,
+    gl: { domElement },
+  } = useThree();
+  // Ref to the controls, so that we can update them on every frame using useFrame
+  const controls: any = useRef();
+
+  useFrame((state) => {
+    if (controls && controls.current) {
+      controls.current.update();
+    }
+  });
+
+  return <orbitControls ref={controls} args={[camera, domElement]} />;
+};
+
 export default function App() {
   return (
     <Canvas style={{ height: "100vh", width: "100%" }}>
+      <CameraControls />
       <Bg />
-      <Box />
     </Canvas>
   );
 }
