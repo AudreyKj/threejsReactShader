@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import RoundGrad from "./RoundGrad";
 import GradMouv from "./GradMouv";
+import AnimForward from "./AnimForward";
 
 export default function App() {
   return (
@@ -12,6 +13,9 @@ export default function App() {
         </Route>
         <Route path="/gradmouv">
           <GradMouv />
+        </Route>
+        <Route path="/panorama">
+          <AnimForward />
         </Route>
       </Switch>
       <div
@@ -26,6 +30,7 @@ export default function App() {
       >
         <Link to="/roundgrad"> RoundGrad </Link>
         <Link to="/gradmouv"> GradMouv </Link>
+        <Link to="/panorama"> PanoramaScene </Link>
       </div>
     </>
   );
