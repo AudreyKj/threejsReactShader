@@ -52,7 +52,7 @@ const CameraControls = () => {
 
   useSpring({
     from: {
-      z: 500,
+      z: 700,
     },
     z: 100,
     onFrame: ({ z }: any) => {
@@ -437,12 +437,15 @@ function Tweet13(props: any) {
   // var mesh = new THREE.Mesh(geometry, material);
   // mesh.position.set(0,0,0)
 
+  const c = <meshStandardMaterial />;
+  console.log("c", c);
+
   return (
     <mesh
       ref={mesh}
       onPointerOver={(e) => setHover2(true)}
       onPointerOut={(e) => setHover2(false)}
-      position={[500, 100, -20]}
+      position={[500, 100, 20]}
     >
       <planeGeometry attach="geometry" args={[500, 150]} />
       <meshStandardMaterial

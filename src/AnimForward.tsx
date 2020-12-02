@@ -1,13 +1,3 @@
-// import * as THREE from "three";
-// /// @ts-ignore
-// import React from "react";
-// //import { ReactThreeFiber } from "react-three-fiber";
-// import { Canvas, useFrame } from "react-three-fiber";
-// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { shaderMaterial } from "./shaderMaterial";
-/// @ts-ignore
-//import glsl from "babel-plugin-glsl/macro";
-
 import * as THREE from "three";
 /// @ts-ignore
 import React, { useRef, useState, Suspense } from "react";
@@ -54,7 +44,7 @@ const CameraControls = () => {
     from: {
       z: 500,
     },
-    z: 30,
+    z: 100,
     onFrame: ({ z }: any) => {
       camera.position.z = z;
     },
@@ -146,14 +136,340 @@ function Tweet2(props: any) {
   );
 }
 
-function RimLight({
-  brightness,
-  color,
-}: {
-  brightness: number;
-  color: string;
-}) {
-  return <pointLight color={color} position={[1, 1, 100]} castShadow />;
+function Tweet3(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet3.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[50, 50, -30]}
+    >
+      <planeGeometry attach="geometry" args={[50, 30]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet4(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet4.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[60, 10, -10]}
+    >
+      <planeGeometry attach="geometry" args={[90, 40]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet5(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet5.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[80, 50, -10]}
+    >
+      <planeGeometry attach="geometry" args={[130, 40]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet6(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet6.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[-30, -40, -80]}
+    >
+      <planeGeometry attach="geometry" args={[130, 40]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet7(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet7.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[-30, 30, -50]}
+    >
+      <planeGeometry attach="geometry" args={[130, 40]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet8(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet8.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[-30, 110, -70]}
+    >
+      <planeGeometry attach="geometry" args={[140, 140]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet9(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet9.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[190, 110, 10]}
+    >
+      <planeGeometry attach="geometry" args={[140, 140]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet10(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet10.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[190, 110, 10]}
+    >
+      <planeGeometry attach="geometry" args={[140, 140]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet11(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet11.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[200, 150, 30]}
+    >
+      <planeGeometry attach="geometry" args={[140, 140]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet12(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet12.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[-30, 10, -300]}
+    >
+      <planeGeometry attach="geometry" args={[500, 150]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet13(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet13.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[500, 100, -20]}
+    >
+      <planeGeometry attach="geometry" args={[500, 150]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
+}
+
+function Tweet14(props: any) {
+  const texture = useLoader(THREE.TextureLoader, "tweet14.png");
+
+  const mesh = useRef();
+
+  const [hover2, setHover2] = useState(false);
+
+  // var geometry = new THREE.PlaneGeometry(10, 10*.75);
+  // var mesh = new THREE.Mesh(geometry, material);
+  // mesh.position.set(0,0,0)
+
+  return (
+    <mesh
+      ref={mesh}
+      onPointerOver={(e) => setHover2(true)}
+      onPointerOut={(e) => setHover2(false)}
+      position={[0, 50, -100]}
+    >
+      <planeGeometry attach="geometry" args={[700, 100]} />
+      <meshStandardMaterial
+        attach="material"
+        map={texture}
+        transparent={true}
+      />
+    </mesh>
+  );
 }
 
 function MoveCam() {
@@ -210,27 +526,25 @@ function MoveCam() {
   return null;
 }
 
+function Dolly() {
+  // This one makes the camera move in and out
+  useFrame(({ clock, camera }) => {
+    camera.position.z = 50 + Math.sin(clock.getElapsedTime()) * 30;
+  });
+  return null;
+}
+
+function RimLight({
+  brightness,
+  color,
+}: {
+  brightness: number;
+  color: string;
+}) {
+  return <pointLight color={color} position={[1, 1, 100]} castShadow />;
+}
+
 export default function AnimForward() {
-  //plus foncé 1: #2f5266
-  //plus foncé 2: #15252e
-  //const [color, setColor] = useState("#4f8aab");
-
-  //   const handleScroll = () => {
-  //     console.log("window.scrollY", window.scrollY);
-  //     console.log("window.scroll", window.scroll);
-  //     if (window.scrollY > 20) {
-  //       setColor("#2f5266");
-  //     } else if (window.scrollY > 50) {
-  //       setColor("#15252e");
-  //     } else {
-  //       setColor("#4f8aab");
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     window.addEventListener("scroll", handleScroll);
-  //   });
-
   return (
     <>
       <Canvas
@@ -248,6 +562,43 @@ export default function AnimForward() {
         <Suspense fallback={"Loading..."}>
           <Tweet2 />
         </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet3 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet4 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet5 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet6 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet7 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet8 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet9 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet10 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet11 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet12 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet13 />
+        </Suspense>
+        <Suspense fallback={"Loading..."}>
+          <Tweet14 />
+        </Suspense>
+        <MoveCam />
       </Canvas>
     </>
   );
